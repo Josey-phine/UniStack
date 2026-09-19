@@ -6,6 +6,9 @@ import GPACalculator from './pages/calculators/GPACalculator.jsx'
 import GradeCalculator from './pages/calculators/GradeCalculator.jsx'
 import CGPATargetPlanner from './pages/planners/CGPATargetPlanner.jsx'
 import ExamTimetableGenerator from './pages/planners/ExamTimetableGenerator.jsx'
+import StudyHoursCalculator from './pages/study-tools/StudyHoursCalculator.jsx'
+import PomodoroTimer from './pages/study-tools/PomodoroTimer.jsx'
+import ExamCountdown from './pages/study-tools/ExamCountdown.jsx'
 
 function App() {
   return (
@@ -22,9 +25,9 @@ function App() {
         <Route path="/cgpa-planner" element={<CGPATargetPlanner />} />
         <Route path="/exam-timetable" element={<ExamTimetableGenerator />} />
 
-        <Route path="/study-hours" element={<div>Study Hours</div>} />
-        <Route path="/pomodoro" element={<div>Pomodoro Timer</div>} />
-        <Route path="/exam-countdown" element={<div>Exam Countdown</div>} />
+        <Route path="/study-hours" element={<StudyHoursCalculator />} />
+        <Route path="/pomodoro" element={<PomodoroTimer />} />
+        <Route path="/exam-countdown" element={<ExamCountdown />} />
 
         <Route path="/about" element={<div>About UniStack</div>} />
       </Routes>
