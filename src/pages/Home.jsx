@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Home() {
   const [openFaq, setOpenFaq] = useState(null)
@@ -7,49 +8,57 @@ function Home() {
     {
       category: 'Calculator',
       name: 'CGPA Calculator',
-      description: 'Calculate your CGPA quickly using your courses, grades, and credit units.',
+      description:
+        'Calculate your CGPA quickly using your courses, grades, and credit units.',
       path: '/cgpa-calculator',
     },
     {
       category: 'Calculator',
       name: 'GPA Calculator',
-      description: 'Calculate your semester GPA and understand how your grades affect your result.',
+      description:
+        'Calculate your semester GPA and understand how your grades affect your result.',
       path: '/gpa-calculator',
     },
     {
       category: 'Calculator',
       name: 'Grade Calculator',
-      description: 'Calculate your final grade from assignments, tests, exams, and other assessments.',
+      description:
+        'Calculate your final grade from assignments, tests, exams, and other assessments.',
       path: '/grade-calculator',
     },
     {
       category: 'Planner',
       name: 'CGPA Target Planner',
-      description: 'Find out what GPA you need in future semesters to reach your target CGPA.',
+      description:
+        'Find out what GPA you need in future semesters to reach your target CGPA.',
       path: '/cgpa-planner',
     },
     {
       category: 'Planner',
       name: 'Exam Timetable Generator',
-      description: 'Create a practical study timetable based on your exams, time, and priorities.',
+      description:
+        'Create a practical study timetable based on your exams, time, and priorities.',
       path: '/exam-timetable',
     },
     {
       category: 'Study Tool',
       name: 'Study Hours Calculator',
-      description: 'Work out how much study time you have and organize it around your schedule.',
+      description:
+        'Work out how much study time you have and organize it around your schedule.',
       path: '/study-hours',
     },
     {
       category: 'Study Tool',
       name: 'Pomodoro Timer',
-      description: 'Stay focused with customizable study sessions and breaks.',
+      description:
+        'Stay focused with customizable study sessions and breaks.',
       path: '/pomodoro',
     },
     {
       category: 'Study Tool',
       name: 'Exam Countdown',
-      description: 'Keep track of how much time remains until your next examination.',
+      description:
+        'Keep track of how much time remains until your next examination.',
       path: '/exam-countdown',
     },
   ]
@@ -66,7 +75,9 @@ function Home() {
 
             <h1 className="text-4xl font-extrabold tracking-tight text-text sm:text-5xl lg:text-6xl">
               Study smarter.
-              <span className="block text-primary">Plan better.</span>
+              <span className="block text-primary">
+                Plan better.
+              </span>
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-text-secondary sm:text-lg">
@@ -83,12 +94,12 @@ function Home() {
                 Explore Tools
               </a>
 
-              <a
-                href="/cgpa-calculator"
+              <Link
+                to="/cgpa-calculator"
                 className="rounded-lg border border-border bg-surface px-6 py-3 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
               >
                 Calculate Your CGPA
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -131,12 +142,12 @@ function Home() {
                 results quickly and accurately.
               </p>
 
-              <a
-                href="/cgpa-calculator"
+              <Link
+                to="/cgpa-calculator"
                 className="mt-5 inline-block text-sm font-semibold text-primary hover:text-primary-dark"
               >
                 Explore calculators →
-              </a>
+              </Link>
             </div>
 
             {/* Planners */}
@@ -154,12 +165,12 @@ function Home() {
                 you stay on track.
               </p>
 
-              <a
-                href="/cgpa-planner"
+              <Link
+                to="/cgpa-planner"
                 className="mt-5 inline-block text-sm font-semibold text-primary hover:text-primary-dark"
               >
                 Explore planners →
-              </a>
+              </Link>
             </div>
 
             {/* Study Tools */}
@@ -177,12 +188,12 @@ function Home() {
                 countdowns with simple tools.
               </p>
 
-              <a
-                href="/study-hours"
+              <Link
+                to="/study-hours"
                 className="mt-5 inline-block text-sm font-semibold text-primary hover:text-primary-dark"
               >
                 Explore study tools →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -207,9 +218,9 @@ function Home() {
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {tools.map((tool) => (
-              <a
+              <Link
                 key={tool.name}
-                href={tool.path}
+                to={tool.path}
                 className="group rounded-2xl border border-border bg-surface p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-lg"
               >
                 <span className="text-xs font-semibold uppercase tracking-wide text-primary">
@@ -227,16 +238,15 @@ function Home() {
                 <span className="mt-5 inline-block text-sm font-semibold text-primary">
                   Open tool →
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-            {/* How It Works */}
+      {/* How It Works */}
       <section className="bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
-
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">
               Simple by design
@@ -253,7 +263,6 @@ function Home() {
           </div>
 
           <div className="relative mt-12 grid gap-8 md:grid-cols-3">
-
             {/* Step 1 */}
             <div className="text-center">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary text-xl font-bold text-white">
@@ -301,16 +310,13 @@ function Home() {
                 make better academic decisions.
               </p>
             </div>
-
           </div>
         </div>
       </section>
 
-
-            {/* Features */}
+      {/* Features */}
       <section className="bg-background px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
-
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">
               Built for students
@@ -327,7 +333,6 @@ function Home() {
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
             {/* Feature 1 */}
             <div className="rounded-2xl border border-border bg-surface p-6">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-100 text-xl">
@@ -391,15 +396,13 @@ function Home() {
                 create an account or pay to get started.
               </p>
             </div>
-
           </div>
         </div>
       </section>
 
-            {/* FAQ */}
+      {/* FAQ */}
       <section className="bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-3xl">
-
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">
               Frequently asked questions
@@ -415,7 +418,6 @@ function Home() {
           </div>
 
           <div className="mt-10 space-y-4">
-
             {[
               {
                 question: 'Is UniStack free to use?',
@@ -442,56 +444,65 @@ function Home() {
                 answer:
                   'The planned personal-data features use local storage in your browser, so your information stays on your device rather than being stored in a UniStack account.',
               },
-            ].map((faq, index) => (
-              <div
-                key={faq.question}
-                className="overflow-hidden rounded-xl border border-border bg-background"
-              >
-                <button
-                  type="button"
-                  onClick={() =>
-                    setOpenFaq(openFaq === index ? null : index)
-                  }
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+            ].map((faq, index) => {
+              const isOpen = openFaq === index
+              const answerId = `faq-answer-${index}`
+
+              return (
+                <div
+                  key={faq.question}
+                  className="overflow-hidden rounded-xl border border-border bg-background"
                 >
-                  <span className="font-semibold text-text">
-                    {faq.question}
-                  </span>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenFaq(isOpen ? null : index)
+                    }
+                    aria-expanded={isOpen}
+                    aria-controls={answerId}
+                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  >
+                    <span className="font-semibold text-text">
+                      {faq.question}
+                    </span>
 
-                  <span className="text-xl text-primary">
-                    {openFaq === index ? '−' : '+'}
-                  </span>
-                </button>
+                    <span
+                      aria-hidden="true"
+                      className="text-xl text-primary"
+                    >
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
 
-                {openFaq === index && (
-                  <div className="border-t border-border px-5 py-4">
-                    <p className="text-sm leading-6 text-text-secondary">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
-
+                  {isOpen && (
+                    <div
+                      id={answerId}
+                      className="border-t border-border px-5 py-4"
+                    >
+                      <p className="text-sm leading-6 text-text-secondary">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
-
-            {/* Footer */}
+      {/* Footer */}
       <footer className="border-t border-border bg-background px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-
           <div className="grid gap-10 md:grid-cols-3">
-
             {/* Brand */}
             <div>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-2xl font-extrabold tracking-tight text-primary"
               >
                 UniStack
-              </a>
+              </Link>
 
               <p className="mt-3 max-w-sm text-sm leading-6 text-text-secondary">
                 Simple academic tools to help students calculate,
@@ -506,40 +517,40 @@ function Home() {
               </h3>
 
               <div className="mt-4 flex flex-col gap-3">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   Home
-                </a>
+                </Link>
 
-                <a
-                  href="/cgpa-calculator"
+                <Link
+                  to="/cgpa-calculator"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   Calculators
-                </a>
+                </Link>
 
-                <a
-                  href="/cgpa-planner"
+                <Link
+                  to="/cgpa-planner"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   Planners
-                </a>
+                </Link>
 
-                <a
-                  href="/study-hours"
+                <Link
+                  to="/study-hours"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   Study Tools
-                </a>
+                </Link>
 
-                <a
-                  href="/about"
+                <Link
+                  to="/about"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   About
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -550,36 +561,35 @@ function Home() {
               </h3>
 
               <div className="mt-4 flex flex-col gap-3">
-                <a
-                  href="/cgpa-calculator"
+                <Link
+                  to="/cgpa-calculator"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   CGPA Calculator
-                </a>
+                </Link>
 
-                <a
-                  href="/gpa-calculator"
+                <Link
+                  to="/gpa-calculator"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   GPA Calculator
-                </a>
+                </Link>
 
-                <a
-                  href="/cgpa-planner"
+                <Link
+                  to="/cgpa-planner"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   CGPA Target Planner
-                </a>
+                </Link>
 
-                <a
-                  href="/pomodoro"
+                <Link
+                  to="/pomodoro"
                   className="text-sm text-text-secondary hover:text-primary"
                 >
                   Pomodoro Timer
-                </a>
+                </Link>
               </div>
             </div>
-
           </div>
 
           <div className="mt-10 border-t border-border pt-6">
@@ -587,7 +597,6 @@ function Home() {
               © {new Date().getFullYear()} UniStack. All rights reserved.
             </p>
           </div>
-
         </div>
       </footer>
     </main>

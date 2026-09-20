@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
 import CGPACalculator from './pages/calculators/CGPACalculator.jsx'
 import Navbar from './components/Navbar.jsx'
 import GPACalculator from './pages/calculators/GPACalculator.jsx'
@@ -29,7 +30,8 @@ function App() {
         <Route path="/pomodoro" element={<PomodoroTimer />} />
         <Route path="/exam-countdown" element={<ExamCountdown />} />
 
-        <Route path="/about" element={<div>About UniStack</div>} />
+        <Route path="/about" element={<About />} />
+      
       </Routes>
     </BrowserRouter>
   )
