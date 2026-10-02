@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import SEO from '../../components/SEO'
 
 const STORAGE_KEY = 'unistack-exam-countdown-exams'
 
@@ -143,7 +144,18 @@ function ExamCountdown() {
   }
 
   return (
-    <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
+    <>
+      <SEO
+        title="Exam Countdown"
+        description="Track your upcoming exams and see exactly how many days you have left to prepare with the UniStack exam countdown tool."
+        breadcrumbs={[
+          { name: 'UniStack', url: '/' },
+          { name: 'Study Tools', url: '/exam-countdown' },
+          { name: 'Exam Countdown', url: '/exam-countdown' },
+        ]}
+      />
+
+      <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
         {/* HEADER */}
         <div className="mb-8">
@@ -434,8 +446,176 @@ function ExamCountdown() {
             </p>
           </div>
         )}
+
+                {/* Educational Content */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            How to Use an Exam Countdown
+          </h2>
+
+          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Why track your exam dates?
+              </h3>
+
+              <p className="mt-2">
+                Knowing exactly how much time you have before an
+                exam can make it easier to organize your preparation.
+                Instead of relying on memory, you can see your
+                upcoming exams and the time remaining for each one
+                in one place.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How does the countdown work?
+              </h3>
+
+              <p className="mt-2">
+                Add the name of your course and the date of your
+                exam. UniStack calculates the number of days between
+                today and the exam date and updates the countdown
+                automatically.
+              </p>
+
+              <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
+                Exam Date − Today = Days Remaining
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How to turn your remaining days into a study plan
+              </h3>
+
+              <p className="mt-2">
+                Start by identifying the exams that are coming up
+                soonest. Then divide your available study time
+                between your courses based on factors such as exam
+                dates, difficulty, and how confident you feel about
+                each subject.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Simple example
+              </h3>
+
+              <p className="mt-2">
+                Suppose your MTH 202 exam is 10 days away. You can
+                use those 10 days to create a revision plan, divide
+                difficult topics across several study sessions, and
+                leave some time for practice questions before the
+                exam.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Tips for preparing before an exam
+              </h3>
+
+              <ul className="mt-2 list-disc space-y-2 pl-5">
+                <li>
+                  Start reviewing early instead of waiting until the
+                  final few days.
+                </li>
+                <li>
+                  Break large topics into smaller study sessions.
+                </li>
+                <li>
+                  Give more attention to difficult or unfamiliar
+                  topics.
+                </li>
+                <li>
+                  Use practice questions to check what you remember.
+                </li>
+                <li>
+                  Leave time for revision before the exam date.
+                </li>
+                <li>
+                  Get enough rest, especially as the exam gets closer.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Use the countdown with other UniStack tools
+              </h3>
+
+              <p className="mt-2">
+                The countdown tells you how much time you have left,
+                while a study planner can help you decide how to use
+                that time. You can combine your exam dates with a
+                study timetable and study-hour planning to create a
+                more organized preparation routine.
+              </p>
+            </div>
+          </div>
+        </section>
+
+                {/* Related Tools */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            Related Tools
+          </h2>
+
+          <p className="mt-2 text-sm leading-7 text-text-secondary">
+            Use these UniStack tools to plan your study time and
+            organize your preparation for upcoming exams.
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <a
+              href="/exam-timetable"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Exam Timetable Generator
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Create a personalized study timetable based on
+                your upcoming exams.
+              </p>
+            </a>
+
+            <a
+              href="/study-hours"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Study Hours Calculator
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Calculate how to divide your available study
+                time between your courses.
+              </p>
+            </a>
+
+            <a
+              href="/pomodoro"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Pomodoro Timer
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Use focused study sessions and breaks to stay
+                productive while preparing for exams.
+              </p>
+            </a>
+          </div>
+        </section>
       </div>
     </main>
+    </>
   )
 }
 

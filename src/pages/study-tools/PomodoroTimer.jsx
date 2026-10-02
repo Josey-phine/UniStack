@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import SEO from '../../components/SEO'
 
 function PomodoroTimer() {
   const timerRef = useRef(null)
@@ -279,7 +280,18 @@ function PomodoroTimer() {
         : 'Long Break'
 
   return (
-    <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
+    <>
+      <SEO
+        title="Pomodoro Timer"
+        description="Use a customizable Pomodoro timer with focus sessions, short breaks, long breaks, and browser notifications to stay productive while studying with UniStack."
+        breadcrumbs={[
+          { name: 'UniStack', url: '/' },
+          { name: 'Study Tools', url: '/pomodoro' },
+          { name: 'Pomodoro Timer', url: '/pomodoro' },
+        ]}
+      />
+
+      <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
           <p className="mb-2 text-sm font-semibold text-primary">
@@ -554,8 +566,171 @@ function PomodoroTimer() {
             focus sessions and breaks.
           </p>
         </div>
+
+                {/* Educational Content */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            Understanding the Pomodoro Technique
+          </h2>
+
+          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                What is the Pomodoro Technique?
+              </h3>
+
+              <p className="mt-2">
+                The Pomodoro Technique is a time-management method that
+                divides work into focused sessions separated by breaks.
+                The idea is to work on one task for a set period, take
+                a break, and then return to focused work.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How does it work?
+              </h3>
+
+              <p className="mt-2">
+                A typical Pomodoro routine uses a focus session followed
+                by a short break. After several focus sessions, a longer
+                break is taken. You can adjust these durations in
+                UniStack to fit your study routine.
+              </p>
+
+              <div className="mt-4 rounded-xl bg-background p-4 text-text">
+                <p>Focus → Short Break → Focus → Short Break</p>
+                <p className="mt-2">
+                  After several focus sessions → Long Break
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How can it help with studying?
+              </h3>
+
+              <p className="mt-2">
+                Timed focus sessions can give you a clear period to
+                concentrate on one task. Knowing that a break is coming
+                can also make a long study session feel more manageable.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How to use the UniStack Pomodoro Timer
+              </h3>
+
+              <ol className="mt-2 list-decimal space-y-2 pl-5">
+                <li>
+                  Choose how long you want each focus session to last.
+                </li>
+                <li>
+                  Set your short and long break durations.
+                </li>
+                <li>
+                  Choose how many focus sessions you want before a long
+                  break.
+                </li>
+                <li>
+                  Start the timer and focus on one study task.
+                </li>
+                <li>
+                  Take the scheduled break when the focus session ends.
+                </li>
+              </ol>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Tips for effective Pomodoro sessions
+              </h3>
+
+              <ul className="mt-2 list-disc space-y-2 pl-5">
+                <li>
+                  Choose one clear task before starting a focus session.
+                </li>
+                <li>
+                  Reduce distractions while the timer is running.
+                </li>
+                <li>
+                  Use your breaks to rest instead of starting another
+                  demanding task.
+                </li>
+                <li>
+                  Adjust the session length if your study needs are
+                  different from the default settings.
+                </li>
+                <li>
+                  Use longer study sessions for tasks that require
+                  extended concentration if that works better for you.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+                {/* Related Tools */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            Related Tools
+          </h2>
+
+          <p className="mt-2 text-sm leading-7 text-text-secondary">
+            Use these UniStack tools to plan your study time,
+            prepare for exams, and stay organized.
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <a
+              href="/study-hours"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Study Hours Calculator
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Calculate how much study time you can dedicate
+                to each course.
+              </p>
+            </a>
+
+            <a
+              href="/exam-timetable"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Exam Timetable Generator
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Create a personalized study timetable for your
+                upcoming exams.
+              </p>
+            </a>
+
+            <a
+              href="/exam-countdown"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Exam Countdown
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Track how many days you have left before each
+                exam.
+              </p>
+            </a>
+          </div>
+        </section>
       </div>
     </main>
+    </>
   )
 }
 

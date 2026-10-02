@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SEO from '../../components/SEO'
 
 function StudyHoursCalculator() {
   const [availableHours, setAvailableHours] = useState('')
@@ -30,7 +31,18 @@ function StudyHoursCalculator() {
   }
 
   return (
-    <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
+    <>
+      <SEO
+        title="Study Hours Calculator"
+        description="Calculate how much study time to dedicate to each course based on your available study hours with UniStack."
+        breadcrumbs={[
+          { name: 'UniStack', url: '/' },
+          { name: 'Study Tools', url: '/study-hours' },
+          { name: 'Study Hours Calculator', url: '/study-hours' },
+        ]}
+      />
+
+      <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
         {/* Header */}
         <div className="mb-8">
@@ -194,8 +206,162 @@ function StudyHoursCalculator() {
             giving difficult or unfamiliar subjects additional time.
           </p>
         </div>
+
+                {/* Educational Content */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            How to Plan Your Study Hours
+          </h2>
+
+          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Why should you plan your study hours?
+              </h3>
+
+              <p className="mt-2">
+                Planning your study time helps you make better use of
+                the hours available to you. It can also help you avoid
+                spending too much time on one course while neglecting
+                others.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How does the calculator work?
+              </h3>
+
+              <p className="mt-2">
+                Enter the total number of hours you have available for
+                studying and the number of courses you want to study.
+                The calculator divides your available hours equally
+                across those courses.
+              </p>
+
+              <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
+                Hours per Course = Total Study Hours ÷ Number of Courses
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Simple example
+              </h3>
+
+              <p className="mt-2">
+                Suppose you have 8 hours available and four courses to
+                study.
+              </p>
+
+              <div className="mt-4 rounded-xl bg-background p-4 text-text">
+                <p>8 total study hours ÷ 4 courses</p>
+                <p className="mt-2 font-semibold">
+                  = 2 hours per course
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Should every course get the same amount of time?
+              </h3>
+
+              <p className="mt-2">
+                Not necessarily. Equal distribution is a useful
+                starting point, but your courses may have different
+                levels of difficulty. You may want to spend additional
+                time on subjects that are more difficult or topics you
+                understand less confidently.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Tips for using your study time effectively
+              </h3>
+
+              <ul className="mt-2 list-disc space-y-2 pl-5">
+                <li>
+                  Prioritize difficult or unfamiliar topics.
+                </li>
+                <li>
+                  Include short breaks during longer study sessions.
+                </li>
+                <li>
+                  Use practice questions to test what you remember.
+                </li>
+                <li>
+                  Review important topics regularly instead of leaving
+                  everything until the last minute.
+                </li>
+                <li>
+                  Adjust your study schedule when your priorities
+                  change.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+                {/* Related Tools */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            Related Tools
+          </h2>
+
+          <p className="mt-2 text-sm leading-7 text-text-secondary">
+            Use these UniStack tools to organize your study
+            schedule and stay focused while preparing for exams.
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <a
+              href="/exam-countdown"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Exam Countdown
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Track how many days you have left before your exams.
+              </p>
+            </a>
+
+            <a
+              href="/exam-timetable"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Exam Timetable Generator
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Create a study timetable based on your exams and
+                available study time.
+              </p>
+            </a>
+
+            <a
+              href="/pomodoro"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Pomodoro Timer
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Use focused study sessions and breaks to manage
+                your study time.
+              </p>
+            </a>
+          </div>
+        </section>
+
       </div>
     </main>
+    </>
   )
 }
 

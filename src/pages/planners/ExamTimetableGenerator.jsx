@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { generateTimetable } from '../../utils/timetableAlgorithm'
+import SEO from '../../components/SEO'
 
 const defaultSettings = {
   studyHoursPerDay: '',
@@ -272,7 +273,18 @@ function ExamTimetableGenerator() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <SEO
+        title="Exam Timetable Generator"
+        description="Create a personalized exam study timetable based on your available study time, exam dates, course difficulty, and confidence level with UniStack."
+        breadcrumbs={[
+          { name: 'UniStack', url: '/' },
+          { name: 'Planners', url: '/exam-timetable' },
+          { name: 'Exam Timetable Generator', url: '/exam-timetable' },
+        ]}
+      />
+
+      <main className="min-h-screen bg-background">
       <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-10">
@@ -707,8 +719,166 @@ function ExamTimetableGenerator() {
             </div>
           </section>
         )}
+                {/* Educational Content */}
+        <section className="mt-12 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            How to Create an Effective Exam Timetable
+          </h2>
+
+          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Why use an exam timetable?
+              </h3>
+
+              <p className="mt-2">
+                An exam timetable helps you organize your available
+                study time before your exams. Instead of deciding what
+                to study each day, you can plan your sessions in advance
+                and make sure important courses receive enough attention.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                What affects study time allocation?
+              </h3>
+
+              <p className="mt-2">
+                A useful study plan should consider how soon each exam
+                is, how difficult the course feels, and how confident
+                you are with the material. Courses with earlier exams,
+                higher difficulty, or lower confidence may need more
+                attention.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How does the UniStack timetable work?
+              </h3>
+
+              <p className="mt-2">
+                Enter your available study hours, exam dates, course
+                difficulty, and confidence level. UniStack then uses
+                these details to organize study sessions around your
+                upcoming exams.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Study planning tips
+              </h3>
+
+              <ul className="mt-2 list-disc space-y-2 pl-5">
+                <li>
+                  Start preparing before the exam is very close.
+                </li>
+                <li>
+                  Give extra attention to difficult courses and topics
+                  you understand less confidently.
+                </li>
+                <li>
+                  Avoid spending your entire study period on one course.
+                </li>
+                <li>
+                  Leave time for revision and practice questions.
+                </li>
+                <li>
+                  Include breaks so you can maintain your focus.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Simple example
+              </h3>
+
+              <p className="mt-2">
+                Suppose you have four hours available for studying and
+                three upcoming exams. A good plan can divide those hours
+                between the courses based on factors such as exam
+                dates, difficulty, and your confidence in each course.
+                This helps you avoid giving every course exactly the
+                same amount of study time when your needs are different.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Make the timetable realistic
+              </h3>
+
+              <p className="mt-2">
+                A timetable is most useful when it matches the amount
+                of time you can actually study. Avoid planning more
+                hours than you can consistently manage. You can also
+                adjust your plan as your understanding of each course
+                changes.
+              </p>
+            </div>
+          </div>
+        </section>
+
+                {/* Related Tools */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            Related Tools
+          </h2>
+
+          <p className="mt-2 text-sm leading-7 text-text-secondary">
+            Use these UniStack tools to track your exam dates,
+            plan your study time, and organize your preparation.
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <a
+              href="/exam-countdown"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Exam Countdown
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Track how many days you have left before each exam.
+              </p>
+            </a>
+
+            <a
+              href="/study-hours"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Study Hours Calculator
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Plan how to divide your available study hours
+                between your courses.
+              </p>
+            </a>
+
+            <a
+              href="/pomodoro"
+              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+            >
+              <h3 className="font-bold text-text">
+                Pomodoro Timer
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-text-secondary">
+                Use focused study sessions and breaks to stay
+                productive while studying.
+              </p>
+            </a>
+          </div>
+        </section>
       </div>
     </main>
+    </>
   )
 }
 

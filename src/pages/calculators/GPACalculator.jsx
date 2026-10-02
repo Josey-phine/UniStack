@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { gradingSystems } from '../../utils/gradingSystem.js'
+import SEO from '../../components/SEO.jsx'
 
 const defaultCustomGrades = {
   A: 5,
@@ -147,7 +148,18 @@ function GPACalculator() {
       : Object.keys(gradingSystems[gradingSystem].grades)
 
   return (
-    <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
+    <>
+      <SEO
+        title="GPA Calculator"
+        description="Calculate your semester GPA using course grades and credit units. Choose a 5.0, 4.0, or custom grading scale with UniStack."
+        breadcrumbs={[
+          { name: 'UniStack', url: '/' },
+          { name: 'Calculators', url: '/gpa-calculator' },
+          { name: 'GPA Calculator', url: '/gpa-calculator' },
+        ]}
+      />
+
+      <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
 
         {/* Header */}
@@ -422,10 +434,253 @@ function GPACalculator() {
           </button>
         </div>
 
+                {/* Educational Content */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            Understanding GPA
+          </h2>
+
+          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                What is GPA?
+              </h3>
+
+              <p className="mt-2">
+                GPA stands for Grade Point Average. It measures your academic
+                performance for a specific semester or academic period. Your
+                GPA is calculated using the grades you earned and the credit
+                units of your courses.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How is GPA calculated?
+              </h3>
+
+              <p className="mt-2">
+                Each grade is assigned a grade point. That grade point is
+                multiplied by the course's credit units to get the quality
+                points. Your total quality points are then divided by your
+                total credit units.
+              </p>
+
+              <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
+                GPA = Total Quality Points ÷ Total Credit Units
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                GPA vs CGPA
+              </h3>
+
+              <p className="mt-2">
+                GPA usually represents your performance during one semester,
+                while CGPA represents your cumulative performance across
+                multiple semesters. Your semester GPA can therefore contribute
+                to your overall CGPA.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Simple example
+              </h3>
+
+              <p className="mt-2">
+                Suppose you take a 3-credit course and earn a grade point of
+                5, then take a 2-credit course and earn a grade point of 4.
+              </p>
+
+              <div className="mt-4 rounded-xl bg-background p-4 text-text">
+                <p>3 × 5 = 15 quality points</p>
+                <p>2 × 4 = 8 quality points</p>
+                <p className="mt-2 font-semibold">
+                  Total = 23 quality points ÷ 5 credit units = 4.60 GPA
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Choosing a grading system
+              </h3>
+
+              <p className="mt-2">
+                Schools may use different grading scales, such as 5.0 or 4.0.
+                Some institutions may also use their own grade-point system.
+                UniStack lets you select a 5.0 scale, a 4.0 scale, or create
+                a custom scale that matches your school's grading system.
+              </p>
+            </div>
+          </div>
+        </section>
+                {/* FAQ */}
+        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-bold text-text">
+            Frequently Asked Questions About GPA
+          </h2>
+
+          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                What is GPA?
+              </h3>
+
+              <p className="mt-2">
+                GPA stands for Grade Point Average. It measures your
+                academic performance for a specific semester or
+                academic period using your course grades and credit
+                units.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                How is GPA calculated?
+              </h3>
+
+              <p className="mt-2">
+                GPA is calculated by dividing your total quality
+                points by your total credit units. Quality points are
+                calculated by multiplying each course's credit units
+                by the grade point earned in that course.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                What is the difference between GPA and CGPA?
+              </h3>
+
+              <p className="mt-2">
+                GPA usually represents your performance during one
+                semester, while CGPA represents your cumulative
+                performance across multiple semesters.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Do credit units affect GPA?
+              </h3>
+
+              <p className="mt-2">
+                Yes. Courses with more credit units have a greater
+                effect on your GPA because their grade points
+                contribute more quality points to the calculation.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Can I calculate GPA on a 4.0 or 5.0 scale?
+              </h3>
+
+              <p className="mt-2">
+                Yes. UniStack supports both 4.0 and 5.0 grading
+                systems. You can also choose the Custom Scale option
+                if your school uses a different grading system.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Can I use my school's custom grade points?
+              </h3>
+
+              <p className="mt-2">
+                Yes. Select Custom Scale and enter the grade points
+                used by your school for each grade.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                What happens if I have courses with different credit units?
+              </h3>
+
+              <p className="mt-2">
+                Each course is weighted according to its credit units.
+                This means a 3-credit course contributes more to your
+                GPA calculation than a 1-credit course when the grade
+                points are different.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-text">
+                Can I save my GPA calculation?
+              </h3>
+
+              <p className="mt-2">
+                UniStack saves your entered courses, grades, credit
+                units, and grading system locally in your browser.
+                Your data stays available when you return to the
+                calculator on the same browser unless you clear it.
+              </p>
+            </div>
+          </div>
+        </section>
+        {/* Related Tools */}
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Related Tools
+  </h2>
+
+  <p className="mt-2 text-sm leading-7 text-text-secondary">
+    Explore other UniStack tools to calculate your cumulative
+    performance, plan your target CGPA, and check your course grades.
+  </p>
+
+  <div className="mt-6 grid gap-4 sm:grid-cols-3">
+    <a
+      href="/cgpa-calculator"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        CGPA Calculator
+      </h3>
+
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Calculate your cumulative GPA across multiple semesters.
+      </p>
+    </a>
+
+    <a
+      href="/cgpa-planner"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        CGPA Target Planner
+      </h3>
+
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Find out what GPA you may need to reach your target CGPA.
+      </p>
+    </a>
+
+    <a
+      href="/grade-calculator"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Grade Calculator
+      </h3>
+
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Calculate your final course percentage from your assessments.
+      </p>
+    </a>
+  </div>
+</section>
+
       </div>
     </main>
+    </>
   )
 }
 
 export default GPACalculator
-

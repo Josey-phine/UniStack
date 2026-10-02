@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   Calculator,
   CalendarDays,
@@ -33,7 +34,17 @@ const toolCategories = [
 
 function About() {
   return (
-    <main>
+    <>
+      <SEO
+        title="About UniStack"
+        description="Learn about UniStack, a collection of simple academic tools designed to help students calculate, plan, and manage their studies."
+        breadcrumbs={[
+          { name: 'UniStack', url: '/' },
+          { name: 'About', url: '/about' },
+        ]}
+      />
+
+      <main>
       {/* Hero */}
       <section className="border-b border-border bg-surface">
         <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
@@ -217,6 +228,7 @@ function About() {
         </div>
       </section>
     </main>
+    </>
   )
 }
 
