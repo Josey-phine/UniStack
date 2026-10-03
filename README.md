@@ -1,21 +1,21 @@
 # UniStack
 
-> Free academic and study tools for students.
+Free academic and study tools for students.
 
-UniStack is a student productivity web app that helps students calculate grades, plan their studies, and stay organized during exam preparation.
+UniStack is a student-focused web app that provides simple tools for calculating grades, planning academic goals, managing exams, and improving study sessions.
 
-## ✨ Features
+## Features
 
-* 📊 **CGPA Calculator** — Supports 5.0, 4.0, and custom grading systems
-* 📈 **GPA Calculator** — Calculate semester GPA using grades and credit units
-* 📝 **Grade Calculator** — Calculate grades from weighted assessments
-* 🎯 **CGPA Target Planner** — Plan the GPA needed to reach a target CGPA
-* 📅 **Exam Timetable Generator** — Create personalized study timetables
-* ⏱️ **Study Hours Calculator** — Divide available study time between courses
-* 🍅 **Pomodoro Timer** — Focus sessions, breaks, customization, and notifications
-* ⏳ **Exam Countdown** — Track upcoming exams and remaining study time
+* CGPA Calculator
+* GPA Calculator
+* Grade Calculator
+* CGPA Target Planner
+* Exam Timetable Generator
+* Study Hours Calculator
+* Pomodoro Timer
+* Exam Countdown
 
-## 🛠️ Built With
+## Built With
 
 * React
 * Vite
@@ -25,23 +25,29 @@ UniStack is a student productivity web app that helps students calculate grades,
 * React Helmet Async
 * LocalStorage
 
-## 🚀 Run Locally
+## Live Demo
+
+[Visit UniStack](https://uni-stack-pink.vercel.app/)
+
+## GitHub
+
+[View the source code on GitHub](https://github.com/Josey-phine/UniStack)
+
+## Getting Started
+
+To run UniStack locally:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Josey-phine/UniStack.git
 cd UniStack
 npm install
 npm run dev
 ```
 
-## 🌐 Live Demo
+## Project
 
-Coming soon.
+This project was built as a student web development project to create useful academic tools in one place.
 
-## 📸 Preview
+## Author
 
-Screenshots coming after deployment.
-
-## 👩🏽‍💻 Author
-
-Built by **Josey** as a student web development project.
+Built by Josey.

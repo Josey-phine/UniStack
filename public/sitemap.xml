@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/cgpa-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/gpa-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/grade-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/cgpa-planner</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/exam-timetable</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/study-hours</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/pomodoro</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/exam-countdown</loc>
+  </url>
+
+  <url>
+    <loc>https://uni-stack-pink.vercel.app/about</loc>
+  </url>
+
+</urlset>
