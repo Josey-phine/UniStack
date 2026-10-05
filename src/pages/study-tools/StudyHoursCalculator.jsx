@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import SEO from '../../components/SEO'
+import { Link } from 'react-router-dom'
 
 function StudyHoursCalculator() {
   const [availableHours, setAvailableHours] = useState('')
@@ -305,59 +306,59 @@ function StudyHoursCalculator() {
         </section>
 
                 {/* Related Tools */}
-        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-text">
-            Related Tools
-          </h2>
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Related Tools
+  </h2>
 
-          <p className="mt-2 text-sm leading-7 text-text-secondary">
-            Use these UniStack tools to organize your study
-            schedule and stay focused while preparing for exams.
-          </p>
+  <p className="mt-2 text-sm leading-7 text-text-secondary">
+    Use these UniStack tools to organize your study
+    schedule and stay focused while preparing for exams.
+  </p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <a
-              href="/exam-countdown"
-              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-            >
-              <h3 className="font-bold text-text">
-                Exam Countdown
-              </h3>
+  <div className="mt-6 grid gap-4 sm:grid-cols-3">
+    <Link
+      to="/exam-countdown"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Exam Countdown
+      </h3>
 
-              <p className="mt-2 text-sm leading-6 text-text-secondary">
-                Track how many days you have left before your exams.
-              </p>
-            </a>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Track how many days you have left before your exams.
+      </p>
+    </Link>
 
-            <a
-              href="/exam-timetable"
-              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-            >
-              <h3 className="font-bold text-text">
-                Exam Timetable Generator
-              </h3>
+    <Link
+      to="/exam-timetable"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Exam Timetable Generator
+      </h3>
 
-              <p className="mt-2 text-sm leading-6 text-text-secondary">
-                Create a study timetable based on your exams and
-                available study time.
-              </p>
-            </a>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Create a study timetable based on your exams and
+        available study time.
+      </p>
+    </Link>
 
-            <a
-              href="/pomodoro"
-              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-            >
-              <h3 className="font-bold text-text">
-                Pomodoro Timer
-              </h3>
+    <Link
+      to="/pomodoro"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Pomodoro Timer
+      </h3>
 
-              <p className="mt-2 text-sm leading-6 text-text-secondary">
-                Use focused study sessions and breaks to manage
-                your study time.
-              </p>
-            </a>
-          </div>
-        </section>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Use focused study sessions and breaks to manage
+        your study time.
+      </p>
+    </Link>
+  </div>
+</section>
 
       </div>
     </main>

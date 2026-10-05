@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import SEO from '../../components/SEO'
+import { Link } from 'react-router-dom'
 
 function PomodoroTimer() {
   const timerRef = useRef(null)
@@ -671,60 +672,62 @@ function PomodoroTimer() {
           </section>
 
           {/* Related Tools */}
-          <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-bold text-text">
-              Related Tools
-            </h2>
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Related Tools
+  </h2>
 
-            <p className="mt-2 text-sm leading-7 text-text-secondary">
-              Use these UniStack tools to plan your study time,
-              prepare for exams, and stay organized.
-            </p>
+  <p className="mt-2 text-sm leading-7 text-text-secondary">
+    Use these UniStack tools to plan your study time,
+    prepare for exams, and stay organized.
+  </p>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              <a
-                href="/study-hours"
-                className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-              >
-                <h3 className="font-bold text-text">
-                  Study Hours Calculator
-                </h3>
+  <div className="mt-6 grid gap-4 sm:grid-cols-3">
+    <Link
+      to="/study-hours"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Study Hours Calculator
+      </h3>
 
-                <p className="mt-2 text-sm leading-6 text-text-secondary">
-                  Calculate how much study time you can dedicate
-                  to each course.
-                </p>
-              </a>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Calculate how much study time you can dedicate
+        to each course.
+      </p>
+    </Link>
 
-              <a
-                href="/exam-timetable"
-                className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-              >
-                <h3 className="font-bold text-text">
-                  Exam Timetable Generator
-                </h3>
+    <Link
+      to="/exam-timetable"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Exam Timetable Generator
+      </h3>
 
-                <p className="mt-2 text-sm leading-6 text-text-secondary">
-                  Create a personalized study timetable for your
-                  upcoming exams.
-                </p>
-              </a>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Create a personalized study timetable for your
+        upcoming exams.
+      </p>
+    </Link>
 
-              <a
-                href="/exam-countdown"
-                className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-              >
-                <h3 className="font-bold text-text">
-                  Exam Countdown
-                </h3>
+    <Link
+      to="/exam-countdown"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Exam Countdown
+      </h3>
 
-                <p className="mt-2 text-sm leading-6 text-text-secondary">
-                  Track how many days you have left before each
-                  exam.
-                </p>
-              </a>
-            </div>
-          </section>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Track how many days you have left before each
+        exam.
+      </p>
+    </Link>
+  </div>
+</section>
+
+         
         </div>
       </main>
     </>

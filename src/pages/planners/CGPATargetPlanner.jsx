@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import SEO from '../../components/SEO.jsx'
 
@@ -529,108 +530,168 @@ function CGPATargetPlanner() {
             Clear All
           </button>
         </div>
-                {/* Educational Content */}
-        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-text">
-            Understanding CGPA Target Planning
-          </h2>
+               
+               {/* Educational Content */}
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Understanding CGPA Target Planning
+  </h2>
 
-          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What is a CGPA target?
-              </h3>
+  <div className="mt-6 space-y-8 text-sm leading-7 text-text-secondary">
+    {/* What is a CGPA target? */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        What is a CGPA target?
+      </h3>
 
-              <p className="mt-2">
-                A CGPA target is the cumulative grade point average
-                you want to achieve by the end of your programme or
-                academic period. Setting a target can help you
-                understand the GPA you need in your remaining courses.
-              </p>
-            </div>
+      <p className="mt-2">
+        A CGPA target is the cumulative grade point average you want
+        to achieve by the end of your programme or academic period.
+        Setting a target can help you understand the GPA you need in
+        your remaining courses.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                How does CGPA target planning work?
-              </h3>
+    {/* How to use */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        How to use the CGPA Target Planner
+      </h3>
 
-              <p className="mt-2">
-                The planner uses your current CGPA, completed credit
-                units, target CGPA, and remaining credit units. It
-                calculates the average GPA you would need across your
-                remaining credits to reach the target.
-              </p>
+      <ol className="mt-3 list-decimal space-y-2 pl-5">
+        <li>Enter your current CGPA.</li>
+        <li>Enter the total credit units you have already completed.</li>
+        <li>Enter the CGPA you want to achieve.</li>
+        <li>Enter the credit units you still have remaining.</li>
+        <li>Check the required average GPA shown by the planner.</li>
+        <li>Use the What-If Scenario to explore different future GPA results.</li>
+      </ol>
 
-              <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
-                Required GPA = Required Quality Points ÷ Remaining Credit Units
-              </div>
-            </div>
+      <p className="mt-3">
+        Use the credit-unit values from your official academic records
+        or course structure to make the calculation as accurate as
+        possible.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Why do credit units matter?
-              </h3>
+    {/* How it works */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        How does CGPA target planning work?
+      </h3>
 
-              <p className="mt-2">
-                Credit units affect how much each semester contributes
-                to your cumulative result. A semester with more credit
-                units has a larger effect on your CGPA than one with
-                fewer credit units.
-              </p>
-            </div>
+      <p className="mt-2">
+        The planner uses your current CGPA and completed credit units
+        to determine your current quality points. It then calculates
+        how many total quality points would be needed to reach your
+        target CGPA after including your remaining credit units.
+      </p>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What-if planning
-              </h3>
+      <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
+        Required GPA = Required Quality Points ÷ Remaining Credit Units
+      </div>
+    </div>
 
-              <p className="mt-2">
-                The What-If Scenario lets you explore possible future
-                results. You can enter an expected GPA and the number
-                of credits you plan to take to see how those results
-                could affect your projected CGPA.
-              </p>
-            </div>
+    {/* Why credit units matter */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Why do credit units matter?
+      </h3>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Simple example
-              </h3>
+      <p className="mt-2">
+        Credit units determine how much different courses or academic
+        periods contribute to your cumulative result. More credit units
+        mean a larger contribution to the overall CGPA.
+      </p>
 
-              <p className="mt-2">
-                Suppose your current CGPA is 4.00 after completing
-                60 credit units, and you have 40 credit units remaining.
-                If your target CGPA is 4.40, the planner calculates the
-                average GPA you would need across those remaining
-                credits to reach the target.
-              </p>
+      <p className="mt-3">
+        This is why the planner needs both your completed credit units
+        and your remaining credit units rather than using CGPA alone.
+      </p>
+    </div>
 
-              <div className="mt-4 rounded-xl bg-background p-4 text-text">
-                <p>Current quality points: 4.00 × 60 = 240</p>
-                <p>Total credits after completion: 60 + 40 = 100</p>
-                <p>Target quality points: 4.40 × 100 = 440</p>
-                <p className="mt-2 font-semibold">
-                  Required GPA: (440 − 240) ÷ 40 = 5.00
-                </p>
-              </div>
-            </div>
+    {/* What-if planning */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        What-If planning
+      </h3>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Remember
-              </h3>
+      <p className="mt-2">
+        The What-If Scenario lets you explore possible future results.
+        Enter an expected GPA and the number of credits you plan to
+        complete to see how those results could affect your projected
+        CGPA.
+      </p>
 
-              <p className="mt-2">
-                A target CGPA is a planning tool, not a guarantee.
-                Your actual result depends on the grades and credit
-                units you eventually complete. Use the planner to
-                explore realistic scenarios and understand what
-                future performance would be required.
-              </p>
-            </div>
-          </div>
-        </section>
-        {/* Related Tools */}
+      <p className="mt-3">
+        You can try different GPA and credit combinations to compare
+        possible outcomes before deciding what academic target to work
+        toward.
+      </p>
+    </div>
+
+    {/* Simple example */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Simple example
+      </h3>
+
+      <p className="mt-2">
+        Suppose your current CGPA is 4.00 after completing 60 credit
+        units, and you have 40 credit units remaining. If your target
+        CGPA is 4.40, the planner calculates the average GPA you would
+        need across those remaining credits.
+      </p>
+
+      <div className="mt-4 rounded-xl bg-background p-4 text-text">
+        <p>Current quality points: 4.00 × 60 = 240</p>
+        <p>Total credits after completion: 60 + 40 = 100</p>
+        <p>Target quality points: 4.40 × 100 = 440</p>
+        <p className="mt-2 font-semibold">
+          Required GPA: (440 − 240) ÷ 40 = 5.00
+        </p>
+      </div>
+    </div>
+
+    {/* Understanding result */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Understanding your result
+      </h3>
+
+      <p className="mt-2">
+        The Required Average GPA shows the average GPA you would need
+        across all of your remaining credit units to reach the target
+        CGPA you entered.
+      </p>
+
+      <p className="mt-3">
+        If the required GPA is above 5.00, the target cannot be reached
+        using a 5.0 grading scale with the numbers entered. If the
+        planner indicates that your target has already been reached,
+        you do not need additional GPA to reach that particular target
+        based on the information provided.
+      </p>
+    </div>
+
+    {/* Important note */}
+    <div className="rounded-xl bg-background p-4">
+      <h3 className="font-bold text-text">
+        Important note
+      </h3>
+
+      <p className="mt-2">
+        The planner provides an estimate based on the CGPA, credit
+        units, and future GPA values you enter. Your actual final CGPA
+        depends on the grades and credit units you eventually complete.
+        Always use your school's official academic records and grading
+        rules when making academic decisions.
+      </p>
+    </div>
+  </div>
+</section>
+
+       {/* Related Tools */}
 <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
   <h2 className="text-2xl font-bold text-text">
     Related Tools
@@ -642,8 +703,8 @@ function CGPATargetPlanner() {
   </p>
 
   <div className="mt-6 grid gap-4 sm:grid-cols-3">
-    <a
-      href="/cgpa-calculator"
+    <Link
+      to="/cgpa-calculator"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -653,10 +714,10 @@ function CGPATargetPlanner() {
       <p className="mt-2 text-sm leading-6 text-text-secondary">
         Calculate your cumulative GPA across multiple semesters.
       </p>
-    </a>
+    </Link>
 
-    <a
-      href="/gpa-calculator"
+    <Link
+      to="/gpa-calculator"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -666,10 +727,10 @@ function CGPATargetPlanner() {
       <p className="mt-2 text-sm leading-6 text-text-secondary">
         Calculate your semester GPA using your grades and credit units.
       </p>
-    </a>
+    </Link>
 
-    <a
-      href="/exam-timetable"
+    <Link
+      to="/exam-timetable"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -679,9 +740,9 @@ function CGPATargetPlanner() {
       <p className="mt-2 text-sm leading-6 text-text-secondary">
         Create a study timetable based on your upcoming exams and available study time.
       </p>
-    </a>
+    </Link>
   </div>
-</section>
+</section> 
 
       </div>
     </main>

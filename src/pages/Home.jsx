@@ -558,6 +558,20 @@ function Home() {
                   >
                     About
                   </Link>
+
+                  <Link
+                    to="/privacy-policy"
+                    className="text-sm text-text-secondary hover:text-primary"
+                  >
+                    Privacy Policy
+                  </Link>
+
+                  <Link
+                    to="/terms-of-service"
+                    className="text-sm text-text-secondary hover:text-primary"
+                  >
+                    Terms of Service
+                  </Link>
                 </div>
               </div>
 

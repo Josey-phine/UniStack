@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { generateTimetable } from '../../utils/timetableAlgorithm'
 import SEO from '../../components/SEO'
+import { Link } from 'react-router-dom'
 
 const defaultSettings = {
   studyHoursPerDay: '',
@@ -822,60 +823,62 @@ function ExamTimetableGenerator() {
           </div>
         </section>
 
-                {/* Related Tools */}
-        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-text">
-            Related Tools
-          </h2>
+        {/* Related Tools */}
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Related Tools
+  </h2>
 
-          <p className="mt-2 text-sm leading-7 text-text-secondary">
-            Use these UniStack tools to track your exam dates,
-            plan your study time, and organize your preparation.
-          </p>
+  <p className="mt-2 text-sm leading-7 text-text-secondary">
+    Use these UniStack tools to track your exam dates,
+    plan your study time, and organize your preparation.
+  </p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <a
-              href="/exam-countdown"
-              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-            >
-              <h3 className="font-bold text-text">
-                Exam Countdown
-              </h3>
+  <div className="mt-6 grid gap-4 sm:grid-cols-3">
+    <Link
+      to="/exam-countdown"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Exam Countdown
+      </h3>
 
-              <p className="mt-2 text-sm leading-6 text-text-secondary">
-                Track how many days you have left before each exam.
-              </p>
-            </a>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Track how many days you have left before each exam.
+      </p>
+    </Link>
 
-            <a
-              href="/study-hours"
-              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-            >
-              <h3 className="font-bold text-text">
-                Study Hours Calculator
-              </h3>
+    <Link
+      to="/study-hours"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Study Hours Calculator
+      </h3>
 
-              <p className="mt-2 text-sm leading-6 text-text-secondary">
-                Plan how to divide your available study hours
-                between your courses.
-              </p>
-            </a>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Plan how to divide your available study hours
+        between your courses.
+      </p>
+    </Link>
 
-            <a
-              href="/pomodoro"
-              className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
-            >
-              <h3 className="font-bold text-text">
-                Pomodoro Timer
-              </h3>
+    <Link
+      to="/pomodoro"
+      className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
+    >
+      <h3 className="font-bold text-text">
+        Pomodoro Timer
+      </h3>
 
-              <p className="mt-2 text-sm leading-6 text-text-secondary">
-                Use focused study sessions and breaks to stay
-                productive while studying.
-              </p>
-            </a>
-          </div>
-        </section>
+      <p className="mt-2 text-sm leading-6 text-text-secondary">
+        Use focused study sessions and breaks to stay
+        productive while studying.
+      </p>
+    </Link>
+  </div>
+</section>
+
+                
       </div>
     </main>
     </>

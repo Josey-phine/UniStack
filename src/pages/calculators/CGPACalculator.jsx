@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { gradingSystems } from '../../utils/gradingSystem.js'
 import SEO from '../../components/SEO.jsx'
 
@@ -679,197 +680,277 @@ function CGPACalculator() {
         </div>
                 
 
-        {/* Educational Content */}
-        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-text">
-            Understanding CGPA
-          </h2>
+       {/* Educational Content */}
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Understanding CGPA
+  </h2>
 
-          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What is CGPA?
-              </h3>
+  <div className="mt-6 space-y-8 text-sm leading-7 text-text-secondary">
+    {/* What is CGPA? */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        What is CGPA?
+      </h3>
 
-              <p className="mt-2">
-                CGPA stands for Cumulative Grade Point Average. It represents
-                your average academic performance across multiple semesters.
-                Unlike semester GPA, which measures your performance in one
-                semester, CGPA combines your results over a longer period.
-              </p>
-            </div>
+      <p className="mt-2">
+        CGPA stands for Cumulative Grade Point Average. It represents
+        your overall academic performance across multiple semesters.
+        Unlike GPA, which usually measures performance within one
+        semester, CGPA combines your courses over a longer period while
+        taking their credit units into account.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                How is CGPA calculated?
-              </h3>
+    {/* How to use */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        How to use the CGPA Calculator
+      </h3>
 
-              <p className="mt-2">
-                CGPA is calculated by dividing your total quality points by
-                your total credit units. Quality points are found by
-                multiplying each course's credit units by the grade point
-                earned in that course.
-              </p>
+      <ol className="mt-3 list-decimal space-y-2 pl-5">
+        <li>Select the grading system used by your school.</li>
+        <li>Enter each course and its credit units.</li>
+        <li>Select the grade you received for each course.</li>
+        <li>Add more courses or semesters when needed.</li>
+        <li>Check your semester GPA and overall CGPA.</li>
+      </ol>
 
-              <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
-                CGPA = Total Quality Points ÷ Total Credit Units
-              </div>
-            </div>
+      <p className="mt-3">
+        If your school uses a grading scale that is not listed, select
+        <strong className="font-semibold text-text"> Custom </strong>
+        and enter the grade points used by your institution.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Why do credit units matter?
-              </h3>
+    {/* How is it calculated? */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        How is CGPA calculated?
+      </h3>
 
-              <p className="mt-2">
-                Courses with more credit units have a greater effect on your
-                GPA and CGPA. For example, a 3-credit course contributes more
-                to your overall result than a 1-credit course when the grade
-                points are different.
-              </p>
-            </div>
+      <p className="mt-2">
+        CGPA is calculated by dividing your total quality points by
+        your total credit units. Quality points are calculated by
+        multiplying each course's credit units by the grade point
+        earned in that course.
+      </p>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Simple example
-              </h3>
+      <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
+        CGPA = Total Quality Points ÷ Total Credit Units
+      </div>
+    </div>
 
-              <p className="mt-2">
-                Suppose you take two courses: a 3-credit course with a grade
-                point of 5 and a 2-credit course with a grade point of 4.
-              </p>
+    {/* Why credit units matter */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Why do credit units matter?
+      </h3>
 
-              <div className="mt-4 rounded-xl bg-background p-4 text-text">
-                <p>3 × 5 = 15 quality points</p>
-                <p>2 × 4 = 8 quality points</p>
-                <p className="mt-2 font-semibold">
-                  Total = 23 quality points ÷ 5 credit units = 4.60 GPA
-                </p>
-              </div>
-            </div>
+      <p className="mt-2">
+        Credit units determine how much a course contributes to your
+        overall result. A course with more credit units has a greater
+        effect on your GPA or CGPA than a course with fewer credit
+        units when their grade points differ.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                5.0, 4.0, and custom grading systems
-              </h3>
+    {/* Multiple semesters */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Calculating CGPA across multiple semesters
+      </h3>
 
-              <p className="mt-2">
-                Different schools use different grading scales. A 5.0 scale
-                may assign higher grade points than a 4.0 scale, while some
-                institutions use their own grading system. UniStack allows
-                you to choose a 5.0 scale, a 4.0 scale, or enter your own
-                custom grade points.
-              </p>
-            </div>
-          </div>
-        </section>
+      <p className="mt-2">
+        You can add multiple semesters to keep your academic results
+        together. UniStack calculates the overall CGPA using the
+        quality points and credit units from the courses entered
+        across those semesters.
+      </p>
+
+      <p className="mt-3">
+        This means your overall CGPA is not simply the average of your
+        semester GPAs. The credit units from your courses are taken
+        into account when calculating the cumulative result.
+      </p>
+    </div>
+
+    {/* Example */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Simple example
+      </h3>
+
+      <p className="mt-2">
+        Suppose you take two courses: a 3-credit course with a grade
+        point of 5 and a 2-credit course with a grade point of 4.
+      </p>
+
+      <div className="mt-4 rounded-xl bg-background p-4 text-text">
+        <p>3 × 5 = 15 quality points</p>
+        <p>2 × 4 = 8 quality points</p>
+        <p className="mt-2 font-semibold">
+          23 quality points ÷ 5 credit units = 4.60 GPA
+        </p>
+      </div>
+    </div>
+
+    {/* Grading systems */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        5.0, 4.0, and custom grading systems
+      </h3>
+
+      <p className="mt-2">
+        Schools can use different grading scales and grade-point
+        values. UniStack supports 5.0 and 4.0 grading systems, as well
+        as a Custom option for institutions that use a different
+        scale.
+      </p>
+
+      <p className="mt-3">
+        Always use the grading system and grade points provided by
+        your school. If your institution has different values, enter
+        them through the Custom option rather than assuming that
+        another grading scale applies.
+      </p>
+    </div>
+
+    {/* Understanding result */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Understanding your CGPA result
+      </h3>
+
+      <p className="mt-2">
+        The number displayed by the calculator represents the
+        cumulative grade point average for the courses and semesters
+        you have entered. The maximum possible value depends on the
+        grading system you selected.
+      </p>
+
+      <p className="mt-3">
+        Your institution may also have its own rules for academic
+        standing or degree classification. Use your school's official
+        grading and classification requirements when interpreting your
+        CGPA.
+      </p>
+    </div>
+
+    {/* Important note */}
+    <div className="rounded-xl bg-background p-4">
+      <h3 className="font-bold text-text">
+        Important note
+      </h3>
+
+      <p className="mt-2">
+        UniStack calculates your result based on the information and
+        grading system you provide. Check your institution's official
+        academic guidelines if you are unsure about grade points,
+        credit units, repeated courses, or how your school calculates
+        its official CGPA.
+      </p>
+    </div>
+  </div>
+</section>
 
                 {/* FAQ */}
-        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-text">
-            Frequently Asked Questions About CGPA
-          </h2>
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Frequently Asked Questions
+  </h2>
 
-          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What is CGPA?
-              </h3>
+  <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Can I calculate CGPA for multiple semesters?
+      </h3>
 
-              <p className="mt-2">
-                CGPA stands for Cumulative Grade Point Average. It
-                represents your average academic performance across
-                multiple semesters, taking course credit units into
-                account.
-              </p>
-            </div>
+      <p className="mt-2">
+        Yes. Add as many semesters as you need, enter the courses and
+        results for each semester, and UniStack will calculate the
+        overall CGPA from the courses you have entered.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What is the difference between GPA and CGPA?
-              </h3>
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Can I use a 4.0 or 5.0 grading system?
+      </h3>
 
-              <p className="mt-2">
-                GPA usually measures your academic performance for
-                one semester, while CGPA combines your performance
-                across multiple semesters.
-              </p>
-            </div>
+      <p className="mt-2">
+        Yes. UniStack supports both 4.0 and 5.0 grading systems.
+        Select the scale used by your school before entering your
+        results.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                How is CGPA calculated?
-              </h3>
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        What if my school uses a different grading system?
+      </h3>
 
-              <p className="mt-2">
-                CGPA is calculated by dividing your total quality
-                points by your total credit units. Quality points are
-                calculated by multiplying each course's credit units
-                by the grade point earned in that course.
-              </p>
-            </div>
+      <p className="mt-2">
+        Select the Custom grading option and enter the grade points
+        used by your school. This allows the calculator to work with
+        grading systems that are different from the built-in 4.0 and
+        5.0 scales.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Does a higher credit unit affect CGPA more?
-              </h3>
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Will changing my grading system delete my courses?
+      </h3>
 
-              <p className="mt-2">
-                Yes. A course with more credit units contributes more
-                to your overall result than a course with fewer credit
-                units, assuming the grade points are different.
-              </p>
-            </div>
+      <p className="mt-2">
+        No. Changing the grading system does not remove the courses
+        you have entered. Your calculator data is saved locally in
+        your browser.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Can I calculate CGPA for multiple semesters?
-              </h3>
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Does UniStack save my CGPA results?
+      </h3>
 
-              <p className="mt-2">
-                Yes. UniStack allows you to add multiple semesters,
-                enter the courses and grades for each semester, and
-                calculate your overall CGPA across them.
-              </p>
-            </div>
+      <p className="mt-2">
+        Your calculator entries are stored locally in your browser so
+        you can return to them later on the same browser and device.
+        UniStack does not require an account for the calculator.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Can I use a 4.0 or 5.0 grading system?
-              </h3>
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Can I simply average my semester GPAs to get my CGPA?
+      </h3>
 
-              <p className="mt-2">
-                Yes. UniStack supports both 4.0 and 5.0 grading
-                systems. You can also choose the custom option if
-                your school uses a different grading scale.
-              </p>
-            </div>
+      <p className="mt-2">
+        Not always. CGPA takes the credit units of your courses into
+        account, so simply averaging semester GPAs may produce a
+        different result. UniStack calculates the overall result from
+        the course credit units and grade points you enter.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Can I use my school's custom grading system?
-              </h3>
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Why does my CGPA look different from my school's result?
+      </h3>
 
-              <p className="mt-2">
-                Yes. Select the Custom grading option and enter the
-                grade points used by your school.
-              </p>
-            </div>
+      <p className="mt-2">
+        Your school may use different grade points, credit-unit rules,
+        rounding methods, or academic policies. Check that you selected
+        the correct grading system and entered your results accurately.
+        For official results, always use your institution's academic
+        records and guidelines.
+      </p>
+    </div>
+  </div>
+</section>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Will changing my grading system delete my courses?
-              </h3>
-
-              <p className="mt-2">
-                No. Changing between the available grading systems
-                does not remove the courses you have entered. Your
-                saved calculator data is stored locally in your
-                browser.
-              </p>
-            </div>
-          </div>
-        </section>
         {/* Related Tools */}
 <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
   <h2 className="text-2xl font-bold text-text">
@@ -882,8 +963,8 @@ function CGPACalculator() {
   </p>
 
   <div className="mt-6 grid gap-4 sm:grid-cols-3">
-    <a
-      href="/gpa-calculator"
+    <Link
+      to="/gpa-calculator"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -894,10 +975,10 @@ function CGPACalculator() {
         Calculate your GPA for a semester using your course
         grades and credit units.
       </p>
-    </a>
+    </Link>
 
-    <a
-      href="/cgpa-planner"
+    <Link
+      to="/cgpa-planner"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -908,10 +989,10 @@ function CGPACalculator() {
         Find out what GPA you may need to reach your target
         CGPA.
       </p>
-    </a>
+    </Link>
 
-    <a
-      href="/grade-calculator"
+    <Link
+      to="/grade-calculator"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -922,7 +1003,7 @@ function CGPACalculator() {
         Calculate your final course percentage from tests,
         assignments, exams, and other assessments.
       </p>
-    </a>
+    </Link>
   </div>
 </section>
 

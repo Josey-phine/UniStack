@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { gradingSystems } from '../../utils/gradingSystem.js'
 import SEO from '../../components/SEO.jsx'
 
@@ -505,195 +506,235 @@ function GradeCalculator() {
         </div>
 
         {/* Educational Content */}
-        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-text">
-            Understanding Course Grades
-          </h2>
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Understanding Course Grades
+  </h2>
 
-          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What is a weighted grade?
-              </h3>
+  <div className="mt-6 space-y-8 text-sm leading-7 text-text-secondary">
+    {/* What is a weighted grade? */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        What is a weighted grade?
+      </h3>
 
-              <p className="mt-2">
-                A weighted grade takes into account how much each assessment
-                contributes to your final course result. Assignments, tests,
-                exams, projects, and other assessments can have different
-                weights.
-              </p>
-            </div>
+      <p className="mt-2">
+        A weighted grade takes into account how much each assessment
+        contributes to your final course result. Assignments, tests,
+        exams, projects, and other assessments can have different
+        weights.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What does assessment weight mean?
-              </h3>
+    {/* How to use */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        How to use the Grade Calculator
+      </h3>
 
-              <p className="mt-2">
-                The weight is the percentage of your final grade that an
-                assessment contributes. For example, if an exam is worth 70%
-                of your course grade, the exam has a weight of 70%.
-              </p>
-            </div>
+      <ol className="mt-3 list-decimal space-y-2 pl-5">
+        <li>Select the grading system used by your school.</li>
+        <li>Enter each assessment, such as an assignment, test, or exam.</li>
+        <li>Enter the percentage weight of each assessment.</li>
+        <li>Enter the score you received for each assessment.</li>
+        <li>Add more assessments until all parts of your course grading structure are included.</li>
+        <li>Check that the assessment weights add up to 100%.</li>
+        <li>Review your final percentage, letter grade, and grade point.</li>
+      </ol>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                How is a weighted score calculated?
-              </h3>
+    {/* Assessment weight */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        What does assessment weight mean?
+      </h3>
 
-              <p className="mt-2">
-                Multiply each assessment score by its weight, then add the
-                weighted scores together to get your final percentage.
-              </p>
+      <p className="mt-2">
+        The weight is the percentage of your final grade that an
+        assessment contributes. For example, if an exam is worth 70%
+        of your course grade, the exam has a weight of 70%.
+      </p>
+    </div>
 
-              <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
-                Weighted Score = Score × (Weight ÷ 100)
-              </div>
-            </div>
+    {/* How calculation works */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        How is a weighted score calculated?
+      </h3>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Simple example
-              </h3>
+      <p className="mt-2">
+        Each assessment score is multiplied by its percentage weight.
+        The weighted scores are then added together to determine your
+        final course percentage.
+      </p>
 
-              <p className="mt-2">
-                Suppose an assignment is worth 30% and you score 80%, while
-                your exam is worth 70% and you score 90%.
-              </p>
+      <div className="mt-4 rounded-xl bg-background p-4 font-medium text-text">
+        Weighted Score = Score × (Weight ÷ 100)
+      </div>
+    </div>
 
-              <div className="mt-4 rounded-xl bg-background p-4 text-text">
-                <p>Assignment: 80 × 0.30 = 24</p>
-                <p>Exam: 90 × 0.70 = 63</p>
-                <p className="mt-2 font-semibold">
-                  Final Percentage = 24 + 63 = 87%
-                </p>
-              </div>
-            </div>
+    {/* Example */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Simple example
+      </h3>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Why should the weights add up to 100%?
-              </h3>
+      <p className="mt-2">
+        Suppose an assignment is worth 30% and you score 80%, while
+        your exam is worth 70% and you score 90%.
+      </p>
 
-              <p className="mt-2">
-                The assessment weights normally represent the complete course
-                grading structure, so they should add up to 100%. If your
-                weights do not total 100%, check your course outline or
-                syllabus to make sure each assessment has been entered
-                correctly.
-              </p>
-            </div>
-          </div>
-        </section>
+      <div className="mt-4 rounded-xl bg-background p-4 text-text">
+        <p>Assignment: 80 × 0.30 = 24</p>
+        <p>Exam: 90 × 0.70 = 63</p>
+        <p className="mt-2 font-semibold">
+          Final Percentage = 24 + 63 = 87%
+        </p>
+      </div>
+    </div>
+
+    {/* Why weights matter */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Why should the weights add up to 100%?
+      </h3>
+
+      <p className="mt-2">
+        The assessment weights normally represent the complete course
+        grading structure, so they should add up to 100%. If your
+        weights do not total 100%, check your course outline or
+        syllabus to make sure each assessment has been entered
+        correctly.
+      </p>
+    </div>
+
+    {/* Understanding result */}
+    <div>
+      <h3 className="text-lg font-bold text-text">
+        Understanding your result
+      </h3>
+
+      <p className="mt-2">
+        The final percentage represents the weighted result of the
+        assessments you entered. The letter grade and grade point are
+        determined using the grading system selected in the calculator.
+      </p>
+
+      <p className="mt-3">
+        Your school may use its own grading and classification rules,
+        so always compare your result with your institution's official
+        grading requirements.
+      </p>
+    </div>
+
+    {/* Important note */}
+    <div className="rounded-xl bg-background p-4">
+      <h3 className="font-bold text-text">
+        Important note
+      </h3>
+
+      <p className="mt-2">
+        UniStack calculates your result from the assessment scores,
+        weights, and grading system you enter. If your official result
+        differs, check your course outline, grading rules, rounding
+        methods, and assessment requirements.
+      </p>
+    </div>
+  </div>
+</section>
         
                 {/* FAQ */}
-        <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
-          <h2 className="text-2xl font-bold text-text">
-            Frequently Asked Questions About Grade Calculation
-          </h2>
+<section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
+  <h2 className="text-2xl font-bold text-text">
+    Frequently Asked Questions
+  </h2>
 
-          <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What is a weighted grade?
-              </h3>
+  <div className="mt-6 space-y-6 text-sm leading-7 text-text-secondary">
+    <div>
+      <h3 className="font-bold text-text">
+        What if my exam is worth 70% of my course grade?
+      </h3>
 
-              <p className="mt-2">
-                A weighted grade takes into account how much each
-                assessment contributes to your final course result.
-                Assessments such as assignments, tests, projects, and
-                exams can have different weights.
-              </p>
-            </div>
+      <p className="mt-2">
+        Enter 70 as the exam weight and enter your exam score as a
+        percentage. Add the remaining assessments and their weights
+        so that the complete grading structure is represented.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                How do I calculate my final course percentage?
-              </h3>
+    <div>
+      <h3 className="font-bold text-text">
+        What happens if my assessment weights do not total 100%?
+      </h3>
 
-              <p className="mt-2">
-                Multiply each assessment score by its percentage
-                weight, then add the weighted scores together. The
-                result is your final course percentage when the
-                assessment weights represent the complete grading
-                structure.
-              </p>
-            </div>
+      <p className="mt-2">
+        UniStack shows a warning when the entered weights do not add
+        up to 100%. Check your course outline or syllabus to make sure
+        every assessment and its weight has been entered correctly.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Why should assessment weights add up to 100%?
-              </h3>
+    <div>
+      <h3 className="font-bold text-text">
+        Can I add assignments, tests, and exams together?
+      </h3>
 
-              <p className="mt-2">
-                The weights normally represent all the components that
-                make up your final course grade, so they should add up
-                to 100%. If they do not, check your course outline or
-                syllabus to make sure every assessment has been
-                entered correctly.
-              </p>
-            </div>
+      <p className="mt-2">
+        Yes. Add a separate assessment row for each assignment, test,
+        exam, project, or other graded component in your course.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What if my exam is worth 70% of my grade?
-              </h3>
+    <div>
+      <h3 className="font-bold text-text">
+        Can I use a 4.0 or 5.0 grading system?
+      </h3>
 
-              <p className="mt-2">
-                Enter 70 as the exam's weight and enter your exam score
-                as a percentage. Add the remaining assessments and
-                their weights so that the complete grading structure
-                is represented.
-              </p>
-            </div>
+      <p className="mt-2">
+        Yes. UniStack supports both 4.0 and 5.0 grading systems. You
+        can also use the Custom Scale option if your school uses
+        different grade-point values.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Can I add assignments, tests, and exams together?
-              </h3>
+    <div>
+      <h3 className="font-bold text-text">
+        Can I use my school's custom grade points?
+      </h3>
 
-              <p className="mt-2">
-                Yes. You can add as many assessment rows as you need
-                and enter the name, weight, and score for each one.
-              </p>
-            </div>
+      <p className="mt-2">
+        Yes. Select Custom Scale and enter the grade-point values used
+        by your school for each grade.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Can I use a 4.0 or 5.0 grading system?
-              </h3>
+    <div>
+      <h3 className="font-bold text-text">
+        Why might my calculated grade differ from my official result?
+      </h3>
 
-              <p className="mt-2">
-                Yes. UniStack supports both 4.0 and 5.0 grading
-                systems. You can also use the Custom Scale option if
-                your school uses a different grade-point system.
-              </p>
-            </div>
+      <p className="mt-2">
+        Differences can result from your school's grading rules,
+        assessment requirements, rounding methods, or other academic
+        policies. Check your course outline and official grading
+        requirements if the results differ.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                Can I use my school's custom grade points?
-              </h3>
+    <div>
+      <h3 className="font-bold text-text">
+        Does UniStack save my grade calculation?
+      </h3>
 
-              <p className="mt-2">
-                Yes. Select Custom Scale and enter the grade points
-                used by your school for each grade.
-              </p>
-            </div>
+      <p className="mt-2">
+        Your assessment entries and selected grading settings can be
+        saved in your browser using local storage. No account is
+        required.
+      </p>
+    </div>
+  </div>
+</section>
 
-            <div>
-              <h3 className="text-lg font-bold text-text">
-                What happens if my assessment weights do not total 100%?
-              </h3>
-
-              <p className="mt-2">
-                UniStack shows a warning when the entered weights do
-                not add up to 100%. Check your course grading
-                structure before relying on the calculated final grade.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Related Tools */}
 <section className="mt-8 rounded-2xl border border-border bg-surface p-5 shadow-sm sm:p-8">
@@ -707,8 +748,8 @@ function GradeCalculator() {
   </p>
 
   <div className="mt-6 grid gap-4 sm:grid-cols-3">
-    <a
-      href="/cgpa-calculator"
+    <Link
+      to="/cgpa-calculator"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -718,10 +759,10 @@ function GradeCalculator() {
       <p className="mt-2 text-sm leading-6 text-text-secondary">
         Calculate your cumulative GPA across multiple semesters.
       </p>
-    </a>
+    </Link>
 
-    <a
-      href="/gpa-calculator"
+    <Link
+      to="/gpa-calculator"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -731,10 +772,10 @@ function GradeCalculator() {
       <p className="mt-2 text-sm leading-6 text-text-secondary">
         Calculate your semester GPA using your grades and credit units.
       </p>
-    </a>
+    </Link>
 
-    <a
-      href="/cgpa-planner"
+    <Link
+      to="/cgpa-planner"
       className="rounded-xl border border-border bg-background p-4 transition hover:border-primary hover:bg-primary/5"
     >
       <h3 className="font-bold text-text">
@@ -744,7 +785,7 @@ function GradeCalculator() {
       <p className="mt-2 text-sm leading-6 text-text-secondary">
         Find out what GPA you may need to reach your target CGPA.
       </p>
-    </a>
+    </Link>
   </div>
 </section>
         

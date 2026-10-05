@@ -98,7 +98,7 @@ function About() {
               <div className="space-y-5">
                 <div>
                   <p className="text-3xl font-extrabold text-primary">
-                    8+
+                    8
                   </p>
                   <p className="mt-1 text-sm text-text-secondary">
                     Academic tools
